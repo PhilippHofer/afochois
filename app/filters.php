@@ -64,10 +64,12 @@ Route::filter('auth.basic', function()
 | response will be issued if they are, which you may freely change.
 |
 */
-
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Auth::check()) 
+		return Redirect::route('/')
+			->width('flash_notice','You are already logged in!');
+
 });
 
 /*
