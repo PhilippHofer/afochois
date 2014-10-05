@@ -12,16 +12,8 @@ class PizzaController extends \BaseController {
         return \View::make('pizza.choose');
     }
 
-	
-
-	public function postIndex()
-	{
-		$groups = \Input::get('group');
-        if(!is_array($groups)) {
-            $groups = array();
-        }
-        \Auth::user()->groups()->sync($groups);
-
-        return \Redirect::intended('english/settings')->with('status', 'success')->with('message', 'Gruppen erfolgreich aktualisiert');
-	}
+	public function getChoose()
+    {
+        return \View::make('pizza.choose');
+    }
 }
