@@ -1,18 +1,18 @@
-@extends('layout')
+@extends('english.layout')
 
 @section('content')
 <div class="row">
     <div class="small-12 small-centered column">
         <div class="ui segment">
             <h3>Vokabelliste</h3>
-            
-            <?php
-                $groups = \Auth::user()->groups;
 
-                foreach($groups as $group) {
-                    echo "<hr />";
-                    echo "<h5>".$group->name."</h5>";
-                    echo '<table class="ui celled table segment">
+            <?php
+            $groups = \Auth::user()->groups;
+
+            foreach ($groups as $group) {
+                echo "<hr />";
+                echo "<h5>" . $group->name . "</h5>";
+                echo '<table class="ui celled table segment">
                             <thead>
                                 <tr>
                                     <th>Deutsch</th>
@@ -20,25 +20,24 @@
                                 </tr>   
                             </thead>
                             <tbody>';
-                    foreach($group->words as $word)
-                    {
-                        echo "<tr>";
-                            echo "<td>".$word->german."</td>";
-                            echo "<td>".$word->english."</td>";
+                foreach ($group->words as $word) {
+                    echo "<tr>";
+                    echo "<td>" . $word->german . "</td>";
+                    echo "<td>" . $word->english . "</td>";
 
-                        echo "</tr>";
-                    }
-
-                    echo "</tbody></table>";
+                    echo "</tr>";
                 }
+
+                echo "</tbody></table>";
+            }
             ?>
-                
-            
+
+
             <hr/>
-            
+
             </table>
 
-            <a href="{{ \URL::to('english/learn') }}" class="ui blue submit button">Fertig</a>
+            <a href="{{ URL::previous() }}" class="ui blue submit button">Zurück</a>
 
         </div>
     </div>

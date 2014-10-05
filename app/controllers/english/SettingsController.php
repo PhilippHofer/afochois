@@ -1,6 +1,6 @@
 <?php
 namespace english;
-class ProfileController extends \BaseController {
+class SettingsController extends \BaseController {
 
     public function __construct()
     {
@@ -9,7 +9,7 @@ class ProfileController extends \BaseController {
 
 	public function getIndex()
     {
-        return \View::make('english.profile');
+        return \View::make('english.settings');
     }
 
 	
@@ -22,6 +22,6 @@ class ProfileController extends \BaseController {
         }
         \Auth::user()->groups()->sync($groups);
 
-        return \Redirect::intended('english/profile')->with('status', 'success')->with('message', 'Gruppen erfolgreich aktualisiert');
+        return \Redirect::intended('english/settings')->with('status', 'success')->with('message', 'Gruppen erfolgreich aktualisiert');
 	}
 }

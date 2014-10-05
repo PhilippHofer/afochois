@@ -14,52 +14,53 @@
             <hr/>
 
             <?php
-                $jc = new english\JsonController();
-                $words = $jc->userWords();
-                $boxes = array();
-                $countWords = 0;
-                foreach($words as $word){
-                    $box = $word->box;
-                    if(!array_key_exists($box, $boxes)) {
-                        $boxes[$box] = 1;
-                    } else {
-                        $boxes[$box]++;
-                    }
-                    $countWords++;
+            $jc = new english\JsonController();
+            $words = $jc->userWords();
+            $boxes = array();
+            $countWords = 0;
+            foreach ($words as $word) {
+                $box = $word->box;
+                if (!array_key_exists($box, $boxes)) {
+                    $boxes[$box] = 1;
+                } else {
+                    $boxes[$box]++;
                 }
-                ksort($boxes);
+                $countWords++;
+            }
+            ksort($boxes);
             ?>
 
             <div id="boxes">
-            @foreach($boxes as $key => $value)
-            <div class="row">
-                <div class="small-12 medium-2 large-2 column">
-                    Stufe {{$key}}: {{$value}}/{{$countWords}}
-                </div>
-                <div class="small-12 medium-6 large-8 column">
-                    <div class="ui blue progress">
-                        <div class="bar" style="width: {{($value/$countWords)*100}}%;">
+                @foreach($boxes as $key => $value)
+                <div class="row">
+                    <div class="small-12 medium-2 large-2 column">
+                        Stufe {{$key}}: {{$value}}/{{$countWords}}
+                    </div>
+                    <div class="small-12 medium-6 large-8 column">
+                        <div class="ui blue progress">
+                            <div class="bar" style="width: {{($value/$countWords)*100}}%;">
+                            </div>
                         </div>
                     </div>
+                    <div class="small-12 medium-4 large-2 column">
+                        <a class="ui green submit button" onclick="chooseBox({{$key}})">Üben</a>
+                    </div>
                 </div>
-                <div class="small-12 medium-4 large-2 column">
-                    <a class="ui green submit button" onclick="chooseBox({{$key}})">Üben</a>
-                </div>
+                @endforeach
             </div>
-            @endforeach
-            </div>
-
 
 
             <hr/>
-            <div  class="row">
+            <div class="row">
                 <div class="small-12 column" id="practiceContent">
                     <div id="error" style="display: none" class="ui error message">
                         <i class="close icon"></i>
+
                         <div id="errorContent" class="header"></div>
                     </div>
                     <div id="success" style="display: none" class="ui success message">
                         <i class="close icon"></i>
+
                         <div id="successContent" class="header"></div>
                     </div>
                     <div id="text">
@@ -72,7 +73,7 @@
                     </div>
                     <div class="row" id="inputForm" style="display: none">
                         <div class="small-12 medium-3 column small-text-left medium-text-right">
-                           <h5 id="word"></h5>
+                            <h5 id="word"></h5>
                         </div>
                         <div class="small-12 medium-6 column">
                             <div class="ui fluid action input">
@@ -90,7 +91,7 @@
             </div>
             <hr/>
 
-            <a href="{{ URL::to('english/learn') }}" class="ui green submit button">Zurück</a>
+            <a href="{{ URL::previous() }}" class="ui green submit button">Zurück</a>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('english.layout')
 
 @section('content')
 <div class="row">
@@ -18,7 +18,8 @@
                 <li>
                     <div class="ui raised segment" data-equalizer-watch>
                         <div class="ui teal ribbon label">Trainieren</div>
-                        <p>Lerne die Vokabeln, indem zuerst immer das deutsche Wort erscheint und danach durch klicken das englische. </p>
+                        <p>Lerne die Vokabeln, indem zuerst immer das deutsche Wort erscheint und danach durch klicken
+                            das englische. </p>
                         <a href="{{ URL::to('english/learn/train') }}" class="ui teal submit button">Start</a>
                     </div>
                 </li>
@@ -34,7 +35,8 @@
                         <div class="equalheight"></div>
                         <div class="ui purple ribbon label">Probetest</div>
                         <p>Fülle alle Vokablen aus und überprüfe am Ende, wieviel Prozent du richtig hast.</p>
-                        <a href="{{ URL::to('english/learn/test') }}" class="cta-button ui purple submit button">Start</a>
+                        <a href="{{ URL::to('english/learn/test') }}"
+                           class="cta-button ui purple submit button">Start</a>
                     </div>
                 </li>
             </ul>
