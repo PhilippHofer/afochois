@@ -31,3 +31,11 @@ Route::group(array('prefix' => 'english', 'namespace' => 'english'), function(){
     /* Insert of new vocabulary to a group */
     Route::post('insert-vocab', 'GroupController@insertVocab')->before('auth');
 });
+
+/*
+Pizza Routes
+*/
+Route::group(array('prefix' => 'pizza', 'namespace' => 'pizza'), function(){
+    Route::get('/', '/choose');
+    Route::controller('/', 'PizzaController');
+});

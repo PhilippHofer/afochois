@@ -38,6 +38,7 @@
                     <a href="{{ URL::to('/') }}">Anfochois</a>
                     <ul class="dropdown">
                         <li><a href="{{ URL::to('english') }}">English</a></li>
+                        <li><a href="{{ URL::to('pizza') }}">Pizza</a></li>
                         <li><a href="http://drive.google.com/folderview?id=0B54l2O_fJff4MWltUHc0bWIyS1E&usp=sharing" target="_blank">Google Docs</a></li>
                         <li><a href="https://euterpe.webuntis.com/WebUntis/?school=htl-perg#main" target="_blank">Webuntis</a></li>
                     </ul>
