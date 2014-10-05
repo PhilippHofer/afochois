@@ -1,4 +1,5 @@
 <?php
+use english\Group;
 
 class GroupTableSeeder extends Seeder {
 

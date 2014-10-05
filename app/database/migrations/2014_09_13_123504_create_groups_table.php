@@ -1,5 +1,5 @@
 <?php
-
+use english\Group;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 

@@ -1,4 +1,6 @@
 <?php
+use english\Group;
+use english\Word;
 
 class WordTableSeeder extends Seeder {
 

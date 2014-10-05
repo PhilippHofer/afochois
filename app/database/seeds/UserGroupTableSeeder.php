@@ -1,4 +1,5 @@
 <?php
+use english\Group;
 
 class UserGroupTableSeeder extends Seeder {
 
